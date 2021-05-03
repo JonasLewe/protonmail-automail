@@ -8,8 +8,6 @@ def send_proton_email(email_to, email_subject, email_message, username, password
     options.add_argument("--headless")
     driver = ''
     try:
-        #display = Display(visible=0, size=(1920, 1080))   # Used to create a virtual display to be able to run selenium in a terminal without GUI
-        #display.start()
         driver = webdriver.Firefox(options=options)
         driver.get('https://mail.protonmail.com/login')
         sleep(1)
@@ -43,22 +41,18 @@ def send_proton_email(email_to, email_subject, email_message, username, password
         driver.find_element_by_class_name('composer-btn-send').click()  
         sleep(5)
         driver.quit()
-        #display.stop()
         print('E-mail Sent!')
         del email_subject
         del email_message
         del driver
-        #del display
     except Exception as err:
         driver.quit()
-        #display.stop()
         print('\nError Occurred while sending e-mail!!')
         status = (str(err), 'Error Origin: Proton Mail Script')
         print(status)
         del err
         del status
         del driver
-        #del display
 
 recepient = ''
 subject = ''
