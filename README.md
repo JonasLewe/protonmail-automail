@@ -3,4 +3,6 @@ This is a python script based on https://github.com/nichcuta/Proton-Mail/, but s
 
 Selenium Web Driver is required to run!
 
+`pip install pyvirtualdisplay selenium`
+
 Just put in your credentials and use `python proton_automail.py`
